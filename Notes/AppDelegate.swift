@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        for num in 1..<100000 {
+            let num_sin = sin(Double(1 / num))
+            NSLog("%f", num_sin)
+        }
+
         return true
     }
 

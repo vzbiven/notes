@@ -73,7 +73,7 @@ class FileNotebook {
         do {
             let data = try Data(contentsOf: fileURL)
             let arr = try JSONSerialization.jsonObject(with: data, options: [])
-                as! Array<Dictionary<String, Any>>
+            as! [[String: Any]] //Array<Dictionary<String, Any>>
             //формируем массив из json
             for obj in arr {
                 if let note = Note.parse(json: obj) {
