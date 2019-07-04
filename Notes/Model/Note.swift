@@ -16,9 +16,9 @@ enum Importance: String {
     case high
     var rawValue: String {
         switch self {
-        case .low: return "unimportant"
+        case .low: return "low"
         case .normal: return "normal"
-        case .high: return "important"
+        case .high: return "high"
         }
     }
 }

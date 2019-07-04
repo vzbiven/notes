@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CocoaLumberjack
 
 /// реализация записной книжки
 class FileNotebook {
@@ -18,10 +19,10 @@ class FileNotebook {
     public func add(_ note: Note) {
         // проверка на дубликаты
         if let _ = notes.first(where: {$0.uid == note.uid}) {
-            print("Запись с таким uid уже существует!")
+            DDLogInfo("Запись с таким uid уже существует!")
         } else {
             self.notes.append(note)
-            print("Запись добавлена")
+            DDLogInfo("Запись добавлена")
         }
     }
     
@@ -46,7 +47,7 @@ class FileNotebook {
                 attributes: nil
             )
         } catch {
-            print("Cant create directory")
+            DDLogInfo("Cant create directory")
         }
         //формируем массив из json
         let note_jsons: [[String: Any]] = self.notes.map { $0.json }
@@ -56,7 +57,7 @@ class FileNotebook {
             FileManager.default.createFile(atPath: fileURL!.absoluteString, contents: data)
             try data.write(to: fileURL!)
         } catch {
-            print("Невозможно создать файл")
+            DDLogInfo("Невозможно создать файл")
         }
     }
     
@@ -81,7 +82,7 @@ class FileNotebook {
                 }
             }
         } catch {
-            print("Невозможно прочитать файл")
+            DDLogInfo("Невозможно прочитать файл")
         }
     }
 }
