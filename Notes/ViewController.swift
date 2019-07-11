@@ -10,10 +10,14 @@ import UIKit
 import CocoaLumberjack
 
 class ViewController: UIViewController {
-    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var titleTextView: UITextField!
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //textView.translatesAutoresizingMaskIntoConstraints = true
+        //textView.sizeToFit()
         // Do any additional setup after loading the view.
         /**
         let note1 = Note(uid: "firstone", title: "title1", content: "content1", color: UIColor.blue, importance: .normal, selfDestructionDate: Date(timeIntervalSinceReferenceDate: 118800))
