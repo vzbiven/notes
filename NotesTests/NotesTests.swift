@@ -23,7 +23,7 @@ class NotesTests: XCTestCase {
     func testNoteJson() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let note1 = Note(uid: "firstone", title: "title1", content: "content1", color: UIColor.blue, importance: .normal, selfDestructionDate: Date(timeIntervalSinceReferenceDate: 118800))
+        let note1 = Note(uid: "firstone", title: "title1", content: "content1", color: UIColor.blue, importance: .normal, selfDestructionDate: Date(timeIntervalSinceReferenceDate: 120))
         let notecopy1 = Note.parse(json: note1.json)!
         
         let note2 = Note(title: "title2", content: "content2", importance: .high)
@@ -44,7 +44,7 @@ class NotesTests: XCTestCase {
         XCTAssertTrue(note2.selfDestructionDate == notecopy2.selfDestructionDate)
     }
     func testNoteFile() {
-        let note1 = Note(uid: "firstone", title: "title1", content: "content1", color: UIColor.blue, importance: .normal, selfDestructionDate: Date(timeIntervalSinceReferenceDate: 118800))
+        let note1 = Note(uid: "firstone", title: "title1", content: "content1", color: UIColor.blue, importance: .normal, selfDestructionDate: Date(timeIntervalSinceReferenceDate: 120))
         let note2 = Note(title: "title2", content: "content2", importance: .high)
         
         
@@ -78,7 +78,6 @@ class NotesTests: XCTestCase {
         XCTAssertTrue(notebook.notes[1].color.toRGBA() == (notebookCopy.notes[1].color.toRGBA()))
         XCTAssertTrue(notebook.notes[1].importance == notebookCopy.notes[1].importance)
         XCTAssertTrue(notebook.notes[1].selfDestructionDate == notebookCopy.notes[1].selfDestructionDate)
-        
         
     }
 

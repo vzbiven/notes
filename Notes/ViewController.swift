@@ -10,11 +10,12 @@ import UIKit
 import CocoaLumberjack
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        /**
         let note1 = Note(uid: "firstone", title: "title1", content: "content1", color: UIColor.blue, importance: .normal, selfDestructionDate: Date(timeIntervalSinceReferenceDate: 118800))
         
         let note2 = Note(title: "title2", content: "content2", importance: .high)
@@ -40,11 +41,16 @@ class ViewController: UIViewController {
         for note in notebook.notes {
             print(note)
         }
+        
+        var a = [Any]()
+        for _ in 0..<100000 {
+            a.append(a)
+        }
         //
         //for num in 1..<100000 {
         //   let num_sin = sin(Double(1 / num))
         //    DDLogVerbose(String(num_sin))
-        //}
+        /} **/
         
     }
 
