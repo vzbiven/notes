@@ -26,7 +26,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Долбоеб" translatesAutoresizingMaskIntoConstraints="NO" id="coN-L0-s3a">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Текст" translatesAutoresizingMaskIntoConstraints="NO" id="coN-L0-s3a">
                                         <rect key="frame" x="9" y="46" width="396" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -44,13 +44,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-ah-VwD">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-ah-VwD">
                                         <rect key="frame" x="189" y="92" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="showDateSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="Exx-YH-kmh"/>
+                                        </connections>
                                     </switch>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ncz-Ba-YRW">
-                                        <rect key="frame" x="8" y="131" width="398" height="193"/>
+                                        <rect key="frame" x="8" y="131" width="398" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="193" id="C2C-xu-IL8"/>
+                                            <constraint firstAttribute="height" constant="100" id="C2C-xu-IL8"/>
                                         </constraints>
                                         <date key="date" timeIntervalSinceReferenceDate="584525332.34833097">
                                             <!--2019-07-11 08:08:52 +0000-->
@@ -87,8 +90,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="coN-L0-s3a" id="Ljv-rM-1mz"/>
-                        <outlet property="titleTextView" destination="9bC-Ci-4ve" id="XHk-Oi-cZr"/>
+                        <outlet property="datePickerHeight" destination="C2C-xu-IL8" id="61o-j6-vuk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

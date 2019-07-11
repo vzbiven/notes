@@ -11,11 +11,23 @@ import CocoaLumberjack
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var titleTextView: UITextField!
-    @IBOutlet weak var textView: UITextView!
+    var showDateFlag = false
     
+    @IBOutlet weak var datePickerHeight: NSLayoutConstraint!
+    @IBAction func showDateSwitch(_ sender: UISwitch) {
+        if showDateFlag {
+            datePickerHeight.constant = 0
+            showDateFlag = !showDateFlag
+        } else {
+            datePickerHeight.constant = 300
+            showDateFlag = !showDateFlag
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePickerHeight.constant = 0
+        
         //textView.translatesAutoresizingMaskIntoConstraints = true
         //textView.sizeToFit()
         // Do any additional setup after loading the view.
