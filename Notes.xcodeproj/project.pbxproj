@@ -16,7 +16,8 @@
 		2C6CA43322C8A7E800B2F7D5 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CA43022C8A7E800B2F7D5 /* FileNotebook.swift */; };
 		2C6CA43422C8A7E800B2F7D5 /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CA43122C8A7E800B2F7D5 /* NoteExtension.swift */; };
 		2C6CA43522C8A7E800B2F7D5 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6CA43222C8A7E800B2F7D5 /* Note.swift */; };
-		2CCDD53222C8B02200187949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9D4A8022C8AF2000752586 /* Assets.xcassets */; };
+		2C7BD5D222D887AB00DEB80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7BD5D122D887AB00DEB80E /* Assets.xcassets */; };
+		2C7BD5D822D8B2F600DEB80E /* SelectionFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7BD5D722D8B2F600DEB80E /* SelectionFlag.swift */; };
 		913E02783E9220DD09FB56DE /* libPods-NotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E4A9A0CF2DCDAA2DC36120 /* libPods-NotesTests.a */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +46,8 @@
 		2C6CA43022C8A7E800B2F7D5 /* FileNotebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
 		2C6CA43122C8A7E800B2F7D5 /* NoteExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
 		2C6CA43222C8A7E800B2F7D5 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		2C9D4A8022C8AF2000752586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = /Users/vzbiven/Notes/Notes/Assets.xcassets; sourceTree = "<absolute>"; };
+		2C7BD5D122D887AB00DEB80E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C7BD5D722D8B2F600DEB80E /* SelectionFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectionFlag.swift; path = views/SelectionFlag.swift; sourceTree = "<group>"; };
 		2CDDBBD322CD0148005A1B43 /* ConfigInfo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ConfigInfo.txt; sourceTree = "<group>"; };
 		54AEFCA3BAE913BA41C649B0 /* Pods-Notes.paid.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.paid.xcconfig"; path = "Pods/Target Support Files/Pods-Notes/Pods-Notes.paid.xcconfig"; sourceTree = "<group>"; };
 		6F69C586301EAE0A4D2DEAAA /* Pods-NotesTests.paid.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesTests.paid.xcconfig"; path = "Pods/Target Support Files/Pods-NotesTests/Pods-NotesTests.paid.xcconfig"; sourceTree = "<group>"; };
@@ -99,13 +101,14 @@
 		2C6CA40B22C8A5FA00B2F7D5 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				2C7BD5D122D887AB00DEB80E /* Assets.xcassets */,
 				2C6CA42F22C8A79B00B2F7D5 /* Model */,
 				2C6CA40C22C8A5FA00B2F7D5 /* AppDelegate.swift */,
 				2C6CA40E22C8A5FA00B2F7D5 /* ViewController.swift */,
-				2C9D4A8022C8AF2000752586 /* Assets.xcassets */,
 				2C6CA41022C8A5FA00B2F7D5 /* Main.storyboard */,
 				2C6CA41522C8A60000B2F7D5 /* LaunchScreen.storyboard */,
 				2C6CA41822C8A60000B2F7D5 /* Info.plist */,
+				2C7BD5D722D8B2F600DEB80E /* SelectionFlag.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -235,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6CA41722C8A60000B2F7D5 /* LaunchScreen.storyboard in Resources */,
-				2CCDD53222C8B02200187949 /* Assets.xcassets in Resources */,
+				2C7BD5D222D887AB00DEB80E /* Assets.xcassets in Resources */,
 				2C6CA41222C8A5FA00B2F7D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +298,7 @@
 			files = (
 				2C6CA43522C8A7E800B2F7D5 /* Note.swift in Sources */,
 				2C6CA43322C8A7E800B2F7D5 /* FileNotebook.swift in Sources */,
+				2C7BD5D822D8B2F600DEB80E /* SelectionFlag.swift in Sources */,
 				2C6CA43422C8A7E800B2F7D5 /* NoteExtension.swift in Sources */,
 				2C6CA40F22C8A5FA00B2F7D5 /* ViewController.swift in Sources */,
 				2C6CA40D22C8A5FA00B2F7D5 /* AppDelegate.swift in Sources */,
