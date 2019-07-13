@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     var showDateFlag = false
     
+    @IBOutlet weak var scroll: UIScrollView!
+    @IBOutlet weak var scrollbottomalign: NSLayoutConstraint!
     @IBOutlet weak var datePickerHeight: NSLayoutConstraint!
     @IBAction func showDateSwitch(_ sender: UISwitch) {
         if showDateFlag {
@@ -36,6 +38,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var flag3: SelectionFlag!
     @IBOutlet weak var flag4: SelectionFlag!
     
+    @IBOutlet weak var HSBCell: HSBCell!
+    @IBOutlet weak var colorPicker: ColorPicker!
     
     @IBAction func palette1tapped(_ sender: UITapGestureRecognizer) {
         noteText.textColor = palette1.backgroundColor
@@ -63,15 +67,54 @@ class ViewController: UIViewController {
     }
     
     @IBAction func palette4tapped(_ sender: UITapGestureRecognizer) {
+        palette4.backgroundColor = colorPicker.currentColor
         noteText.textColor = palette4.backgroundColor
         flag1.isHidden = true
         flag2.isHidden = true
         flag3.isHidden = true
         flag4.isHidden = false
     }
+
+    
+    @IBAction func pelette4longPress(_ sender: UILongPressGestureRecognizer) {
+        colorPicker.isHidden = false
+        HSBCell.isHidden = true
+        flag1.isHidden = true
+        flag2.isHidden = true
+        flag3.isHidden = true
+        flag4.isHidden = false
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
+            
+            if self.colorPicker.isHidden {
+                self.palette4.backgroundColor = self.colorPicker.currentColor
+                self.noteText.textColor = self.palette4.backgroundColor
+                timer.invalidate()
+                
+            }
+        }
+        
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if scrollbottomalign.constant == 0 {
+                scrollbottomalign.constant += keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if scrollbottomalign.constant != 0 {
+            scrollbottomalign.constant = 0
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         datePickerHeight.constant = 0
         palette1.backgroundColor = UIColor.black
         palette1.layer.borderWidth = 3
@@ -88,7 +131,7 @@ class ViewController: UIViewController {
         palette4.layer.borderWidth = 3
         palette4.layer.borderColor = UIColor.black.cgColor
         
-        
+
         //textView.translatesAutoresizingMaskIntoConstraints = true
         //textView.sizeToFit()
         // Do any additional setup after loading the view.
