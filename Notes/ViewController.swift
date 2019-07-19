@@ -2,176 +2,147 @@
 //  ViewController.swift
 //  Notes
 //
-//  Created by ВЗБИВЕНЬ on 30/06/2019.
-//  Copyright © 2019 ВЗБИВЕНЬ. All rights reserved.
+//  Created by Yaroslav on 6/24/19.
+//  Copyright © 2019 test. All rights reserved.
 //
 
 import UIKit
-import CocoaLumberjack
 
 class ViewController: UIViewController {
-    
-    var showDateFlag = false
-    
-    @IBOutlet weak var scroll: UIScrollView!
-    @IBOutlet weak var scrollbottomalign: NSLayoutConstraint!
-    @IBOutlet weak var datePickerHeight: NSLayoutConstraint!
-    @IBAction func showDateSwitch(_ sender: UISwitch) {
-        if showDateFlag {
-            datePickerHeight.constant = 0
-            showDateFlag = !showDateFlag
-        } else {
-            datePickerHeight.constant = 300
-            showDateFlag = !showDateFlag
-        }
-        
-    }
-    
-    @IBOutlet weak var noteText: UITextView!
-    @IBOutlet weak var palette1: UIView!
-    @IBOutlet weak var palette2: UIView!
-    @IBOutlet weak var palette3: UIView!
-    @IBOutlet weak var palette4: UIView!
-    
-    @IBOutlet weak var flag1: SelectionFlag!
-    @IBOutlet weak var flag2: SelectionFlag!
-    @IBOutlet weak var flag3: SelectionFlag!
-    @IBOutlet weak var flag4: SelectionFlag!
-    
-    @IBOutlet weak var HSBCell: HSBCell!
-    @IBOutlet weak var colorPicker: ColorPicker!
-    
-    @IBAction func palette1tapped(_ sender: UITapGestureRecognizer) {
-        noteText.textColor = palette1.backgroundColor
-        flag1.isHidden = false
-        flag2.isHidden = true
-        flag3.isHidden = true
-        flag4.isHidden = true
-        
-    }
 
-    @IBAction func palette2tapped(_ sender: UITapGestureRecognizer) {
-        noteText.textColor = palette2.backgroundColor
-        flag1.isHidden = true
-        flag2.isHidden = false
-        flag3.isHidden = true
-        flag4.isHidden = true
-    }
-    
-    @IBAction func palette3tapped(_ sender: UITapGestureRecognizer) {
-        noteText.textColor = palette3.backgroundColor
-        flag1.isHidden = true
-        flag2.isHidden = true
-        flag3.isHidden = false
-        flag4.isHidden = true
-    }
-    
-    @IBAction func palette4tapped(_ sender: UITapGestureRecognizer) {
-        palette4.backgroundColor = colorPicker.currentColor
-        noteText.textColor = palette4.backgroundColor
-        flag1.isHidden = true
-        flag2.isHidden = true
-        flag3.isHidden = true
-        flag4.isHidden = false
-    }
 
+  @IBOutlet weak var whiteView: ColorViewRect!
+  @IBOutlet weak var redView: ColorViewRect!
+  @IBOutlet weak var greenView: ColorViewRect!
+  @IBOutlet weak var paleteView: ColorViewRect!
+  @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var datePicker: UIDatePicker!
+  @IBOutlet weak var stackViewColor: UIStackView!
+  @IBOutlet weak var viewContainer: UIView!
+  
+  var kbFrameSize:CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    print(stackViewColor.frame.maxX)
+    print(stackViewColor.frame.maxY)
+    print(kbFrameSize.height)
+    scrollView.contentSize = CGSize(width: self.view.bounds.size.width, height: stackViewColor.frame.maxY + kbFrameSize.height + 10)
+    scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
     
-    @IBAction func pelette4longPress(_ sender: UILongPressGestureRecognizer) {
-        colorPicker.isHidden = false
-        HSBCell.isHidden = true
-        flag1.isHidden = true
-        flag2.isHidden = true
-        flag3.isHidden = true
-        flag4.isHidden = false
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
-            
-            if self.colorPicker.isHidden {
-                self.palette4.backgroundColor = self.colorPicker.currentColor
-                self.noteText.textColor = self.palette4.backgroundColor
-                timer.invalidate()
-                
-            }
-        }
-        
-    }
+    viewContainer.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: stackViewColor.frame.maxY + kbFrameSize.height + 10)
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if scrollbottomalign.constant == 0 {
-                scrollbottomalign.constant += keyboardSize.height
-            }
-        }
-    }
+  }
+  
+  @IBAction func tappedSwitch(_ sender: UISwitch) {
+    datePicker.isHidden = !sender.isOn
+  }
+  
+  var colorModel:ColorViewModel!
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if scrollbottomalign.constant != 0 {
-            scrollbottomalign.constant = 0
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        datePickerHeight.constant = 0
-        palette1.backgroundColor = UIColor.black
-        palette1.layer.borderWidth = 3
-        palette1.layer.borderColor = UIColor.black.cgColor
-        
-        palette2.backgroundColor = UIColor.blue
-        palette2.layer.borderWidth = 3
-        palette2.layer.borderColor = UIColor.black.cgColor
-        
-        palette3.backgroundColor = UIColor.brown
-        palette3.layer.borderWidth = 3
-        palette3.layer.borderColor = UIColor.black.cgColor
-        
-        palette4.layer.borderWidth = 3
-        palette4.layer.borderColor = UIColor.black.cgColor
-        
+    whiteView.layer.borderColor = UIColor.black.cgColor
+    redView.layer.borderColor = UIColor.black.cgColor
+    greenView.layer.borderColor = UIColor.black.cgColor
+    paleteView.layer.borderColor = UIColor.black.cgColor
 
-        //textView.translatesAutoresizingMaskIntoConstraints = true
-        //textView.sizeToFit()
-        // Do any additional setup after loading the view.
-        /**
-        let note1 = Note(uid: "firstone", title: "title1", content: "content1", color: UIColor.blue, importance: .normal, selfDestructionDate: Date(timeIntervalSinceReferenceDate: 118800))
-        
-        let note2 = Note(title: "title2", content: "content2", importance: .high)
-        
-        print(note1)
-        print(note1.json)
-        print(note2.json)
-        
-        let note3: Note? = Note.parse(json: note1.json)
-        print(note3!)
-        print(note3!.json)
-        
-        let notebook = FileNotebook()
-        notebook.add(note3!)
-        notebook.add(note1)
-        notebook.add(note2)
-        DDLogVerbose(String(notebook.notes.count))
-        notebook.saveToFile()
-        notebook.remove(with: "firstone")
-        DDLogVerbose(String(notebook.notes.count))
-        notebook.loadFromFile()
-        DDLogVerbose("Notes:")
-        for note in notebook.notes {
-            print(note)
-        }
-        
-        var a = [Any]()
-        for _ in 0..<100000 {
-            a.append(a)
-        }
-        //
-        //for num in 1..<100000 {
-        //   let num_sin = sin(Double(1 / num))
-        //    DDLogVerbose(String(num_sin))
-        /} **/
-        
+    whiteView.layer.borderWidth = 2
+    redView.layer.borderWidth = 2
+    greenView.layer.borderWidth = 2
+    paleteView.layer.borderWidth = 2
+  
+    whiteView.touchesHandler = { [weak self] in
+      self?.whiteView.isSelect = true
+      self?.redView.isSelect = false
+      self?.greenView.isSelect = false
+      self?.paleteView.isSelect = false
     }
+    
+    redView.touchesHandler = { [weak self] in
+      self?.whiteView.isSelect = false
+      self?.redView.isSelect = true
+      self?.greenView.isSelect = false
+      self?.paleteView.isSelect = false
+    }
+    
+    greenView.touchesHandler = { [weak self] in
+      self?.whiteView.isSelect = false
+      self?.redView.isSelect = false
+      self?.greenView.isSelect = true
+      self?.paleteView.isSelect = false
+      
+    }
+    
+    paleteView.touchesHandler = { [weak self] in
+      self?.whiteView.isSelect = false
+      self?.redView.isSelect = false
+      self?.greenView.isSelect = false
+      self?.paleteView.isSelect = true
+      
+    }
+    
+    paleteView.touchesLongHandler = { [weak self] in
+      self?.performSegue(withIdentifier: "seguePalette", sender: self)
+    }
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let colorPicker = segue.destination as? ColorPickerViewController {
+      colorPicker.colorModel = colorModel
+    }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    if (colorModel != nil) {
+      paleteView.isPallete = false
+      paleteView.shapeColor = colorModel.colorView.color
+      paleteView.alpha = CGFloat(colorModel.colorView.brightless)
+      
+      paleteView.isSelect = true
+      whiteView.isSelect = false
+      redView.isSelect = false
+      greenView.isSelect = false
+    } else {
+       colorModel = ColorViewModel()
+    }
+    
+  }
+  
 
+  @objc func kbDidShow(notification: Notification) {
+    guard let userInfo = notification.userInfo else { return }
+    kbFrameSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+    
+    scrollView.contentSize = CGSize(width: self.view.bounds.size.width, height: stackViewColor.frame.maxY + kbFrameSize.height)
+    scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
+    
+  }
+  
+  @objc func kbDidHide() {
+    scrollView.contentSize = CGSize(width: self.view.bounds.size.width, height: stackViewColor.frame.maxY)
+  }
+  
+  
 }
+
+enum MyError: Error {
+  
+  case RuntimeError(message: String)
+  
+}
+
+extension Double {
+  
+  func reverseSinus() throws -> Double {
+    if (abs(self) < Double.ulpOfOne) {
+      throw MyError.RuntimeError(message: "Could not evaluate reverse for zero value")
+    }
+    
+    return sin(1 / self)
+  }
+  
+}
+

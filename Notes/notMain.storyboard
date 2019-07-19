@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWg-0B-Ia9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of0-fy-uQA">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title for your note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pWL-S8-PPG">
+                                                <rect key="frame" x="16" y="36" width="343" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tBG-OA-Ipl">
+                                                <rect key="frame" x="16" y="74" width="343" height="66.333333333333314"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Destroy Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3J-5o-iOj">
+                                                <rect key="frame" x="16" y="148.33333333333334" width="139" height="20.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dng-Pa-Cki">
+                                                <rect key="frame" x="163" y="143" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="tappedSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="TPm-jz-QQ8"/>
+                                                </connections>
+                                            </switch>
+                                            <datePicker hidden="YES" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Vx-ao-pD6">
+                                                <rect key="frame" x="16" y="182" width="343" height="69"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="584462675.29008901">
+                                                    <!--2019-07-10 14:44:35 +0000-->
+                                                </date>
+                                            </datePicker>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-Jz-j7B">
+                                                <rect key="frame" x="52" y="259" width="271" height="64"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5e-ZZ-ivr" customClass="ColorViewRect" customModule="Notes" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="shapeSize">
+                                                                <size key="value" width="64" height="64"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="point" keyPath="shapePosition">
+                                                                <point key="value" x="0.0" y="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSelect" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGp-3u-SpR" customClass="ColorViewRect" customModule="Notes" customModuleProvider="target">
+                                                        <rect key="frame" x="69" y="0.0" width="64" height="64"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="shapeSize">
+                                                                <size key="value" width="64" height="64"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shapeColor">
+                                                                <color key="value" red="0.97485190629959106" green="0.24714362621307373" blue="0.0085269520059227943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yi1-8C-s1C" customClass="ColorViewRect" customModule="Notes" customModuleProvider="target">
+                                                        <rect key="frame" x="138" y="0.0" width="64" height="64"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="shapeColor">
+                                                                <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="shapeSize">
+                                                                <size key="value" width="64" height="64"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmX-Du-ua2" customClass="ColorViewRect" customModule="Notes" customModuleProvider="target">
+                                                        <rect key="frame" x="207" y="0.0" width="64" height="64"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isPallete" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSelect" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="size" keyPath="shapeSize">
+                                                                <size key="value" width="64" height="64"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="69Z-90-4w0"/>
+                                                    <constraint firstAttribute="width" constant="271" id="9H8-J6-EVl"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="0Vx-ao-pD6" firstAttribute="leading" secondItem="Of0-fy-uQA" secondAttribute="leadingMargin" constant="8" id="3jO-g6-EuO"/>
+                                            <constraint firstItem="Dng-Pa-Cki" firstAttribute="leading" secondItem="v3J-5o-iOj" secondAttribute="trailing" constant="8" id="8xy-dV-Teg"/>
+                                            <constraint firstItem="v3J-5o-iOj" firstAttribute="centerY" secondItem="Dng-Pa-Cki" secondAttribute="centerY" id="DWK-Xr-Qnd"/>
+                                            <constraint firstItem="0Vx-ao-pD6" firstAttribute="leading" secondItem="Of0-fy-uQA" secondAttribute="leading" constant="16" id="IBd-Pf-9DJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Vx-ao-pD6" secondAttribute="trailing" constant="16" id="MOd-rg-1z7"/>
+                                            <constraint firstItem="gMM-Jz-j7B" firstAttribute="centerX" secondItem="Of0-fy-uQA" secondAttribute="centerX" id="Pw4-MC-Ca2"/>
+                                            <constraint firstItem="pWL-S8-PPG" firstAttribute="top" secondItem="Of0-fy-uQA" secondAttribute="top" constant="36" id="Tzj-Ge-ult"/>
+                                            <constraint firstItem="0Vx-ao-pD6" firstAttribute="top" secondItem="Dng-Pa-Cki" secondAttribute="bottom" constant="8" id="cjb-cv-bRN"/>
+                                            <constraint firstItem="gMM-Jz-j7B" firstAttribute="top" secondItem="0Vx-ao-pD6" secondAttribute="bottom" constant="8" id="hPX-yi-RGr"/>
+                                            <constraint firstItem="tBG-OA-Ipl" firstAttribute="top" secondItem="pWL-S8-PPG" secondAttribute="bottom" constant="8" id="id0-ky-ASe"/>
+                                            <constraint firstItem="gMM-Jz-j7B" firstAttribute="top" relation="lessThanOrEqual" secondItem="Dng-Pa-Cki" secondAttribute="bottom" constant="85" id="ovo-nj-Isx"/>
+                                            <constraint firstItem="v3J-5o-iOj" firstAttribute="top" secondItem="tBG-OA-Ipl" secondAttribute="bottom" constant="8" id="zec-00-1LA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Of0-fy-uQA" firstAttribute="top" secondItem="nWg-0B-Ia9" secondAttribute="top" id="4tB-lg-hot"/>
+                                    <constraint firstItem="Of0-fy-uQA" firstAttribute="top" secondItem="nWg-0B-Ia9" secondAttribute="top" id="C8V-xX-vKW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Of0-fy-uQA" secondAttribute="trailing" id="P5i-Wx-xxS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Of0-fy-uQA" secondAttribute="bottom" id="ZCb-wQ-M5l"/>
+                                    <constraint firstItem="Of0-fy-uQA" firstAttribute="leading" secondItem="nWg-0B-Ia9" secondAttribute="leading" id="aQc-sx-KEA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Of0-fy-uQA" secondAttribute="trailing" id="cfB-8V-KxJ"/>
+                                    <constraint firstItem="Of0-fy-uQA" firstAttribute="leading" secondItem="nWg-0B-Ia9" secondAttribute="leading" id="wCm-OS-gNb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Of0-fy-uQA" secondAttribute="bottom" id="zdl-fx-vRA"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99205261469999995" green="0.99221855400000003" blue="0.99202936890000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nWg-0B-Ia9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="208-Vu-hdh"/>
+                            <constraint firstItem="YGq-qJ-iz7" firstAttribute="trailing" secondItem="pWL-S8-PPG" secondAttribute="trailing" constant="16" id="2ns-Yx-JKZ"/>
+                            <constraint firstItem="nWg-0B-Ia9" firstAttribute="trailing" secondItem="YGq-qJ-iz7" secondAttribute="trailing" id="I8q-aO-ckY"/>
+                            <constraint firstItem="nWg-0B-Ia9" firstAttribute="leading" secondItem="YGq-qJ-iz7" secondAttribute="leading" id="Ij4-0b-dyw"/>
+                            <constraint firstItem="v3J-5o-iOj" firstAttribute="leading" secondItem="YGq-qJ-iz7" secondAttribute="leading" constant="16" id="TyD-GO-TL9"/>
+                            <constraint firstItem="nWg-0B-Ia9" firstAttribute="trailing" secondItem="YGq-qJ-iz7" secondAttribute="trailing" id="X0h-6x-FC3"/>
+                            <constraint firstItem="Of0-fy-uQA" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" priority="250" id="bdJ-wk-cOl"/>
+                            <constraint firstAttribute="bottom" secondItem="nWg-0B-Ia9" secondAttribute="bottom" id="fxB-Cm-uiV"/>
+                            <constraint firstItem="nWg-0B-Ia9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lHs-Hg-XgE"/>
+                            <constraint firstItem="pWL-S8-PPG" firstAttribute="leading" secondItem="YGq-qJ-iz7" secondAttribute="leading" constant="16" id="n96-bJ-kNs"/>
+                            <constraint firstItem="YGq-qJ-iz7" firstAttribute="trailing" secondItem="tBG-OA-Ipl" secondAttribute="trailing" constant="16" id="tau-eN-mll"/>
+                            <constraint firstItem="Of0-fy-uQA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="u4p-fy-c9L"/>
+                            <constraint firstItem="tBG-OA-Ipl" firstAttribute="leading" secondItem="YGq-qJ-iz7" secondAttribute="leading" constant="16" id="ucM-i8-3yk"/>
+                            <constraint firstAttribute="bottom" secondItem="nWg-0B-Ia9" secondAttribute="bottom" id="yxj-mj-C30"/>
+                            <constraint firstItem="nWg-0B-Ia9" firstAttribute="leading" secondItem="YGq-qJ-iz7" secondAttribute="leading" id="z9z-Da-yoV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YGq-qJ-iz7"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="0Vx-ao-pD6" id="8Sm-lJ-k1c"/>
+                        <outlet property="greenView" destination="yi1-8C-s1C" id="Vlv-s7-Zlz"/>
+                        <outlet property="paleteView" destination="wmX-Du-ua2" id="mAt-Ge-YSD"/>
+                        <outlet property="redView" destination="GGp-3u-SpR" id="Lol-Bh-a9u"/>
+                        <outlet property="scrollView" destination="nWg-0B-Ia9" id="SoC-cF-ENU"/>
+                        <outlet property="stackViewColor" destination="gMM-Jz-j7B" id="ZUd-MU-EU3"/>
+                        <outlet property="viewContainer" destination="Of0-fy-uQA" id="vWW-HU-at8"/>
+                        <outlet property="whiteView" destination="q5e-ZZ-ivr" id="QKp-Si-Lzt"/>
+                        <segue destination="mgv-Nt-k4u" kind="show" identifier="seguePalette" id="X1K-OH-eEJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="89"/>
+        </scene>
+        <!--Color Picker View Controller-->
+        <scene sceneID="88S-cA-35S">
+            <objects>
+                <viewController id="mgv-Nt-k4u" customClass="ColorPickerViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bXM-EK-rKd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaH-YC-vTq" customClass="ColorPicker" customModule="Notes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oaH-YC-vTq" firstAttribute="trailing" secondItem="Riw-9r-sdP" secondAttribute="trailing" id="FK9-tr-bWC"/>
+                            <constraint firstItem="oaH-YC-vTq" firstAttribute="top" secondItem="bXM-EK-rKd" secondAttribute="top" id="Fku-yw-dvQ"/>
+                            <constraint firstItem="oaH-YC-vTq" firstAttribute="trailing" secondItem="Riw-9r-sdP" secondAttribute="trailing" id="JLs-wU-RIn"/>
+                            <constraint firstItem="oaH-YC-vTq" firstAttribute="leading" secondItem="Riw-9r-sdP" secondAttribute="leading" id="NaJ-k2-u1w"/>
+                            <constraint firstItem="oaH-YC-vTq" firstAttribute="leading" secondItem="Riw-9r-sdP" secondAttribute="leading" id="Zau-D4-wQu"/>
+                            <constraint firstAttribute="bottom" secondItem="oaH-YC-vTq" secondAttribute="bottom" id="ilA-eM-PIe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Riw-9r-sdP"/>
+                    </view>
+                    <connections>
+                        <outlet property="colorPicker" destination="oaH-YC-vTq" id="cyi-gy-3eC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Un5-mD-OcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="90"/>
+        </scene>
+    </scenes>
+</document>

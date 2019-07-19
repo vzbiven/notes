@@ -16,13 +16,24 @@ class FileNotebook {
     private(set) var notes: [Note] = []
     
     /// функцияя добавленияя новой заметки
-    public func add(_ note: Note) {
-        // проверка на дубликаты
-        if let _ = notes.first(where: {$0.uid == note.uid}) {
-            DDLogInfo("Запись с таким uid уже существует!")
+    public func add(_ note: Note, override: Bool = false) {
+        if override {
+            for (index, oldNote) in notes.enumerated() {
+                if oldNote.uid == note.uid {
+                    notes[index] = note
+                    DDLogDebug("Note added with override")
+                    return
+                }
+            }
+            notes.append(note)
         } else {
-            self.notes.append(note)
-            DDLogInfo("Запись добавлена")
+            // проверка на дубликаты
+            if let _ = notes.first(where: {$0.uid == note.uid}) {
+                DDLogInfo("Запись с таким uid уже существует!")
+            } else {
+                self.notes.append(note)
+                DDLogInfo("Запись добавлена")
+            }
         }
     }
     
