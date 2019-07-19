@@ -1,5 +1,5 @@
 //
-//  ColorPickerViewController.swift
+//  ColorPickViewController.swift
 //  Notes
 //
 //  Created by ВЗБИВЕНЬ on 19/07/2019.
@@ -8,15 +8,14 @@
 
 import UIKit
 
-class ColorPickerViewController: UIViewController {
-
-    @IBOutlet weak var colorPicker: ColorPicker!
+class ColorPickViewController: UIViewController {
     
+    var currentColor: ColorView
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        colorPicker.set(Color: UIColor.red.cgColor)
     }
     
 

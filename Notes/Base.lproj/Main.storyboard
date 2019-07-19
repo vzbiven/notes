@@ -143,10 +143,6 @@
                                             <outletCollection property="gestureRecognizers" destination="zor-cb-IEu" appends="YES" id="AkG-j5-zLA"/>
                                         </connections>
                                     </stackView>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlR-pR-t1t" customClass="ColorPicker" customModule="Notes" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="28" width="397" height="323"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="4x9-5X-T2k" firstAttribute="trailing" secondItem="Ncz-Ba-YRW" secondAttribute="trailing" id="1Bd-Uy-Acy"/>
@@ -154,7 +150,6 @@
                                     <constraint firstAttribute="bottom" secondItem="4x9-5X-T2k" secondAttribute="bottom" constant="100" id="3z4-xN-0RK"/>
                                     <constraint firstItem="coN-L0-s3a" firstAttribute="top" secondItem="9bC-Ci-4ve" secondAttribute="bottom" constant="8" id="4Ci-QH-Dv9"/>
                                     <constraint firstItem="DEV-ac-bi1" firstAttribute="top" secondItem="coN-L0-s3a" secondAttribute="bottom" constant="8" id="9jD-pN-Xgv"/>
-                                    <constraint firstItem="rlR-pR-t1t" firstAttribute="top" secondItem="POM-CU-8M8" secondAttribute="top" constant="28" id="BR1-N0-fGX"/>
                                     <constraint firstItem="Ncz-Ba-YRW" firstAttribute="top" secondItem="DEV-ac-bi1" secondAttribute="bottom" constant="8" id="BrT-H8-X6M"/>
                                     <constraint firstItem="9bC-Ci-4ve" firstAttribute="trailing" secondItem="POM-CU-8M8" secondAttribute="trailingMargin" id="DZK-tc-wP7"/>
                                     <constraint firstItem="9bC-Ci-4ve" firstAttribute="top" secondItem="POM-CU-8M8" secondAttribute="topMargin" constant="20" id="FGS-HK-DiP"/>
@@ -165,12 +160,9 @@
                                     <constraint firstItem="Ncz-Ba-YRW" firstAttribute="centerX" secondItem="coN-L0-s3a" secondAttribute="centerX" id="UXA-zU-pL4"/>
                                     <constraint firstItem="4x9-5X-T2k" firstAttribute="top" secondItem="Ncz-Ba-YRW" secondAttribute="bottom" constant="8" id="Uo3-Pf-3zA"/>
                                     <constraint firstItem="9bC-Ci-4ve" firstAttribute="leading" secondItem="POM-CU-8M8" secondAttribute="leadingMargin" constant="1" id="b5c-CK-C8t"/>
-                                    <constraint firstItem="rlR-pR-t1t" firstAttribute="trailing" secondItem="coN-L0-s3a" secondAttribute="trailing" id="ePd-gZ-7Mo"/>
                                     <constraint firstItem="DEV-ac-bi1" firstAttribute="leading" secondItem="coN-L0-s3a" secondAttribute="leading" id="gFP-Rj-z5j"/>
-                                    <constraint firstItem="rlR-pR-t1t" firstAttribute="leading" secondItem="POM-CU-8M8" secondAttribute="leading" constant="8" id="gol-ub-Z54"/>
                                     <constraint firstItem="4x9-5X-T2k" firstAttribute="leading" secondItem="Ncz-Ba-YRW" secondAttribute="leading" id="hyJ-IK-vDM"/>
                                     <constraint firstItem="coN-L0-s3a" firstAttribute="trailing" secondItem="9bC-Ci-4ve" secondAttribute="trailing" id="r1i-Dg-LCR"/>
-                                    <constraint firstItem="rlR-pR-t1t" firstAttribute="bottom" secondItem="4x9-5X-T2k" secondAttribute="bottom" constant="100" id="xYY-ze-Eqm"/>
                                     <constraint firstItem="w1a-ah-VwD" firstAttribute="leading" secondItem="DEV-ac-bi1" secondAttribute="trailing" constant="8" id="yeu-qe-hIq"/>
                                 </constraints>
                             </scrollView>
@@ -186,7 +178,6 @@
                     </view>
                     <connections>
                         <outlet property="colorOneView" destination="dto-0C-P6c" id="6ch-uI-ard"/>
-                        <outlet property="colorPicker" destination="rlR-pR-t1t" id="NcJ-DH-L8R"/>
                         <outlet property="colorSelectableView" destination="44U-M7-InN" id="mVz-qd-X22"/>
                         <outlet property="colorThreeView" destination="PgO-jd-hXf" id="uIe-mu-pwR"/>
                         <outlet property="colorTwoView" destination="3ez-Sa-wf3" id="Ug8-Jn-2QJ"/>
@@ -195,21 +186,53 @@
                         <outlet property="datePickerSwitch" destination="w1a-ah-VwD" id="Cg4-AD-clq"/>
                         <outlet property="noteTextView" destination="coN-L0-s3a" id="JEi-Uo-Yb4"/>
                         <outlet property="noteTitle" destination="9bC-Ci-4ve" id="K4m-Cg-0yE"/>
+                        <segue destination="uWj-07-a7a" kind="show" identifier="ShowColorPicker" id="g51-vx-OXd"/>
                     </connections>
                 </viewController>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="mzE-ce-BLR">
-                    <connections>
-                        <action selector="onCustomColorSelection:" destination="BYZ-38-t0r" id="hqi-cl-vyh"/>
-                    </connections>
-                </pongPressGestureRecognizer>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="zor-cb-IEu">
                     <connections>
                         <action selector="onColorSelection:" destination="BYZ-38-t0r" id="9Z1-e2-yzT"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="mzE-ce-BLR">
+                    <connections>
+                        <action selector="onCustomColorSelection:" destination="BYZ-38-t0r" id="hqi-cl-vyh"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2074" y="-325"/>
+            <point key="canvasLocation" x="2073.913043478261" y="-325.44642857142856"/>
+        </scene>
+        <!--Color Picker View Controller-->
+        <scene sceneID="JMh-Th-iJn">
+            <objects>
+                <viewController id="uWj-07-a7a" customClass="ColorPickerViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IGI-rn-TLe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rli-gj-tea" customClass="ColorPicker" customModule="Notes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rli-gj-tea" firstAttribute="leading" secondItem="lru-MB-Sd9" secondAttribute="leading" id="98L-np-pzi"/>
+                            <constraint firstItem="Rli-gj-tea" firstAttribute="top" secondItem="lru-MB-Sd9" secondAttribute="top" id="C0r-M3-nL8"/>
+                            <constraint firstItem="lru-MB-Sd9" firstAttribute="trailing" secondItem="Rli-gj-tea" secondAttribute="trailing" id="GjZ-ZY-eTf"/>
+                            <constraint firstItem="lru-MB-Sd9" firstAttribute="bottom" secondItem="Rli-gj-tea" secondAttribute="bottom" id="K0p-DH-gv0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lru-MB-Sd9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9y1-Vb-TVb"/>
+                    <connections>
+                        <outlet property="colorPicker" destination="Rli-gj-tea" id="RIk-IV-HQ0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hrh-IX-R5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3087" y="-325"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="JfX-vL-pbA">

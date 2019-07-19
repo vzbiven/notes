@@ -26,6 +26,7 @@
 		2C7BD5D822D8B2F600DEB80E /* SelectionFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7BD5D722D8B2F600DEB80E /* SelectionFlag.swift */; };
 		2C9534F122E0911000B919EE /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9534F022E0911000B919EE /* NotesTableViewController.swift */; };
 		2C9534F322E0CBEA00B919EE /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9534F222E0CBEA00B919EE /* UIImageExtension.swift */; };
+		2CF589E522E20ACA003C743E /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF589E422E20ACA003C743E /* ColorPickerViewController.swift */; };
 		913E02783E9220DD09FB56DE /* libPods-NotesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E4A9A0CF2DCDAA2DC36120 /* libPods-NotesTests.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		2C9534F022E0911000B919EE /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		2C9534F222E0CBEA00B919EE /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		2CDDBBD322CD0148005A1B43 /* ConfigInfo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ConfigInfo.txt; sourceTree = "<group>"; };
+		2CF589E422E20ACA003C743E /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		54AEFCA3BAE913BA41C649B0 /* Pods-Notes.paid.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.paid.xcconfig"; path = "Pods/Target Support Files/Pods-Notes/Pods-Notes.paid.xcconfig"; sourceTree = "<group>"; };
 		6F69C586301EAE0A4D2DEAAA /* Pods-NotesTests.paid.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NotesTests.paid.xcconfig"; path = "Pods/Target Support Files/Pods-NotesTests/Pods-NotesTests.paid.xcconfig"; sourceTree = "<group>"; };
 		97E8CA4A3A541CB54977EA80 /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				2C6CA40C22C8A5FA00B2F7D5 /* AppDelegate.swift */,
 				2C6CA40E22C8A5FA00B2F7D5 /* EditNote.swift */,
 				2C6CA41022C8A5FA00B2F7D5 /* Main.storyboard */,
+				2CF589E422E20ACA003C743E /* ColorPickerViewController.swift */,
 				2C9534F022E0911000B919EE /* NotesTableViewController.swift */,
 				2C6CA41522C8A60000B2F7D5 /* LaunchScreen.storyboard */,
 				2C6CA41822C8A60000B2F7D5 /* Info.plist */,
@@ -347,6 +350,7 @@
 				2C6CA43422C8A7E800B2F7D5 /* NoteExtension.swift in Sources */,
 				2C11C9FC22E1A6DC00DCD1BD /* UIViewController+HideKeyboard.swift in Sources */,
 				2C6CA40F22C8A5FA00B2F7D5 /* EditNote.swift in Sources */,
+				2CF589E522E20ACA003C743E /* ColorPickerViewController.swift in Sources */,
 				2C6CA40D22C8A5FA00B2F7D5 /* AppDelegate.swift in Sources */,
 				2C9534F122E0911000B919EE /* NotesTableViewController.swift in Sources */,
 				2C11C9FB22E1A6DC00DCD1BD /* UITextView+Placeholder.swift in Sources */,

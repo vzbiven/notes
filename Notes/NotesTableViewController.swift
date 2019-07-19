@@ -112,14 +112,16 @@ class NotesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let selectedRow = sender as? Int
-        let editController = segue.destination as? EditNote
-        if let _ = selectedRow {
-            editController?.note = notebook.notes[selectedRow!]
-        } else {
-            editController?.note = nil
+        if let controller = segue.destination as? EditNote,
+            segue.identifier == "ShowEditNote" {
+            let selectedRow = sender as? Int
+            if let _ = selectedRow {
+                controller.note = notebook.notes[selectedRow!]
+            } else {
+                controller.note = nil
+            }
+            controller.mainViewController = self
         }
-        editController?.mainViewController = self
     }
     func updateNotes(note: Note) {
         notebook.add(note, override: true)

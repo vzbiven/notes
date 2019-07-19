@@ -21,7 +21,6 @@ class EditNote: UIViewController {
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
     @IBOutlet weak var datePickerHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var colorPicker: ColorPicker!
     @IBOutlet weak var datePickerSwitch: UISwitch!
     
     private var screenSize: CGRect? = nil
@@ -43,10 +42,6 @@ class EditNote: UIViewController {
     
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         dismissKeyboard()
-    }
-    
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        colorPicker.updateCursorPosition()
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -83,7 +78,8 @@ class EditNote: UIViewController {
     }
     @IBAction func onCustomColorSelection(_ sender: UILongPressGestureRecognizer) {
         dismissKeyboard()
-        colorPicker.isHidden = false
+        print("DA EBAL YA")
+        performSegue(withIdentifier: "ShowColorPicker", sender: nil)
     }
     
     @IBAction func onColorSelection(_ sender: UITapGestureRecognizer) {
@@ -117,12 +113,13 @@ class EditNote: UIViewController {
             resetColorSelection()
             colorSelectableView.Selected = true
         }
-        
+/*
         colorPicker.onCompletedSelection = { color in
             self.colorSelectableView.Color = color
             self.resetColorSelection()
             self.colorSelectableView.Selected = true
         }
+ */
         hideKeyboardWhenTappedAround()
     }
     
